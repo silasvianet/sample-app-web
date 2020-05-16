@@ -64,15 +64,15 @@ module.exports = {
         https,
         cert: './localhost.crt',
         key: './localhost.key',
-        host: '0.0.0.0',
-        port: 9999,
+        host: 'prorsoft.kinghost.net',
+        port: 21017,
         hot: true,
         overlay: true,
         historyApiFallback: false,
         watchContentBase: true,
         disableHostCheck: true,
         headers: {
-            'Access-Control-Allow-Origin': https ? 'https://0.0.0.0:9999' : 'http://0.0.0.0:9999'
+            'Access-Control-Allow-Origin': https ? 'https://prorsoft.kinghost.net:21017' : 'http://prorsoft.kinghost.net:21017'
         }
     },
     mode: 'development',

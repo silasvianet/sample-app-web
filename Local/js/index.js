@@ -10,14 +10,14 @@ console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
 ZoomMtg.preLoadWasm();
 ZoomMtg.prepareJssdk();
 
-const API_KEY = 'YOUR_API_KEY';
+const API_KEY = 'a8Vl-Sp-TxK9MvTsYiMe9A';
 
 /**
     * NEVER PUT YOUR ACTUAL API SECRET IN CLIENT SIDE CODE, THIS IS JUST FOR QUICK PROTOTYPING
     * The below generateSignature should be done server side as not to expose your api secret in public
     * You can find an eaxmple in here: https://marketplace.zoom.us/docs/sdk/native-sdks/Web-Client-SDK/tutorial/generate-signature
     */
-const API_SECRET = 'YOUR_API_SECRET';
+const API_SECRET = 'erRkAbJXZlWDkKFtEP9umfAib3zUkYBf0k5Y';
 
 testTool = window.testTool;
 document.getElementById('display_name').value = "Local" + ZoomMtg.getJSSDKVersion()[0] + testTool.detectOS() + "#" + testTool.getBrowserInfo();

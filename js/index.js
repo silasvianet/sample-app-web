@@ -7,6 +7,7 @@ console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
 // if (!china) ZoomMtg.setZoomJSLib('https://source.zoom.us/1.7.7/lib', '/av'); // CDN version default
 // else ZoomMtg.setZoomJSLib('https://jssdk.zoomus.cn/1.7.7/lib', '/av'); // china cdn option 
 // ZoomMtg.setZoomJSLib('http://localhost:9999/node_modules/@zoomus/websdk/dist/lib', '/av'); // Local version default, Angular Project change to use cdn version
+
 ZoomMtg.preLoadWasm();
 ZoomMtg.prepareJssdk();
 
@@ -23,20 +24,15 @@ testTool = window.testTool;
 document.getElementById('display_name').value = "Local" + ZoomMtg.getJSSDKVersion()[0] + testTool.detectOS() + "#" + testTool.getBrowserInfo();
 document.getElementById('meeting_number').value = testTool.getCookie('meeting_number');
 document.getElementById('meeting_pwd').value = testTool.getCookie('meeting_pwd');
-if (testTool.getCookie('meeting_lang')) document.getElementById('meeting_lang').value = testTool.getCookie('meeting_lang');
 
-document.getElementById('meeting_lang').addEventListener('change', (e) => {
-    testTool.setCookie('meeting_lang', document.getElementById('meeting_lang').value);
-    $.i18n.reload(document.getElementById('meeting_lang').value);
-});
+testTool.setCookie('meeting_lang', 'pt-PT');
+$.i18n.reload('pt-PT');
 
 document.getElementById('clear_all').addEventListener('click', (e) => {
     testTool.deleteAllCookies();
     document.getElementById('display_name').value = '';
     document.getElementById('meeting_number').value = '';
     document.getElementById('meeting_pwd').value = '';
-    document.getElementById('meeting_lang').value = 'en-US';
-    document.getElementById('meeting_role').value = 0;
 });
 document.getElementById('join_meeting').addEventListener('click', (e) => {
     e.preventDefault();
@@ -48,7 +44,7 @@ document.getElementById('join_meeting').addEventListener('click', (e) => {
         userName: document.getElementById('display_name').value,
         passWord: document.getElementById('meeting_pwd').value,
         leaveUrl: 'https://zoom.us',
-        role: parseInt(document.getElementById('meeting_role').value, 10)
+        role: parseInt(0, 10)
     };
     testTool.setCookie('meeting_number', meetConfig.meetingNumber);
     testTool.setCookie('meeting_pwd', meetConfig.passWord);

@@ -1,0 +1,10 @@
+Trasmontano
+const API_KEY       = 'uM_F3kaESMWW3EEbwGU4PA'
+const API_SECRET = 'lV1D9buVms6BpUXUijp3YQE5GScAHDIusAoN';
+
+Número da conta: 57060835
+
+Silas
+const API_KEY       = 'a8Vl-Sp-TxK9MvTsYiMe9A';
+const API_SECRET = 'erRkAbJXZlWDkKFtEP9umfAib3zUkYBf0k5Y';
+
